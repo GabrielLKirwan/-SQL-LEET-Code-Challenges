@@ -1,0 +1,19 @@
+# Write your MySQL query statement below
+
+WITH Q1 AS (
+SELECT
+E.empID
+,E.name
+,E.salary
+,B.bonus
+FROM EMPLOYEE AS E 
+LEFT OUTER JOIN
+  BONUS AS B
+    ON E.EMPID = B.EMPID
+WHERE BONUS < 1000 OR BONUS IS NULL 
+) 
+
+SELECT
+NAME
+,BONUS
+FROM Q1
