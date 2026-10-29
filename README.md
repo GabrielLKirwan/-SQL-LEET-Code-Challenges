@@ -27,4 +27,5 @@ All the Leet Code SQL Challenges I completed whilst developing my SQL knowledge.
 | [1683-invalid-tweets](https://github.com/GabrielLKirwan/LEET-Code-SQL-Challenges/tree/master/1683-invalid-tweets) |
 | [1757-recyclable-and-low-fat-products](https://github.com/GabrielLKirwan/LEET-Code-SQL-Challenges/tree/master/1757-recyclable-and-low-fat-products) |
 | [1934-confirmation-rate](https://github.com/GabrielLKirwan/LEET-Code-SQL-Challenges/tree/master/1934-confirmation-rate) |
+| [2356-number-of-unique-subjects-taught-by-each-teacher](https://github.com/GabrielLKirwan/LEET-Code-SQL-Challenges/tree/master/2356-number-of-unique-subjects-taught-by-each-teacher) |
 <!---LeetCode Topics End-->
