@@ -1,0 +1,93 @@
+# Write your MySQL query statement below
+WITH Q1 AS (
+    SELECT
+        USER_ID,
+        COUNT(ACTION) AS CONFIRMED_MSGS
+    FROM CONFIRMATIONS
+    WHERE ACTION = "CONFIRMED"
+    GROUP BY USER_ID
+),
+Q2 AS (
+    SELECT 
+        USER_ID,
+        COUNT(ACTION) AS TOTAL_MSGS
+    FROM CONFIRMATIONS
+    GROUP BY USER_ID
+),
+Q3 AS (
+    SELECT 
+        Q1.USER_ID,
+        Q1.CONFIRMED_MSGS,
+        COALESCE(Q2.TOTAL_MSGS, 0) AS TOTAL_MSGS
+    FROM Q1
+    LEFT JOIN Q2 ON Q1.USER_ID = Q2.USER_ID
+    GROUP BY USER_ID
+)
+
+,Q4 AS(
+SELECT
+S.USER_ID AS USER_ID
+,COALESCE(CONFIRMED_MSGS,0) AS CONFIRMED_MSGS 
+,COALESCE(TOTAL_MSGS,0) AS TOTAL_MSGS
+,ROUND(
+     COALESCE(Q1.CONFIRMED_MSGS, 0) * 1.0 / NULLIF(Q2.TOTAL_MSGS, 0), 2
+    ) AS CONFIRMATION_RATE
+FROM SIGNUPS AS S
+    LEFT JOIN Q1 
+        ON S.USER_ID = Q1.USER_ID
+    LEFT JOIN Q2
+         ON S.USER_ID = Q2.USER_ID
+
+)
+
+SELECT 
+USER_ID
+,COALESCE(CONFIRMATION_RATE,0) AS CONFIRMATION_RATE
+FROM Q4
+
+
+    -- USER_ID,
+    -- TOTAL_MSGS,
+    -- CONFIRMED_MSGS
+    -- Added a comma before this line
+    -- Multiplied by 1.0 for decimal precision
+    -- Added NULLIF to handle users with 0 no-shows
+    -- (TOTAL_SIGNUPS * 1.0) / NO_SHOW AS CONFIRMATION_RATE
+
+
+
+
+-- -- WITH Q1 AS(
+-- -- SELECT
+-- --     USER_ID
+-- --     ,COUNT(S.USER_ID) AS TOTAL_SIGNUPS
+-- -- FROM SIGNUPS AS S
+-- -- GROUP BY USER_ID
+-- -- ),
+
+-- --  Q2 AS (
+-- -- SELECT 
+-- -- USER_ID
+-- -- ,COUNT(USER_ID) AS NO_TIMES_NO_SHOW
+-- -- ,ACTION 
+-- -- FROM CONFIRMATIONS AS C
+-- --     WHERE ACTION = "TIMEOUT"
+-- --     GROUP BY USER_ID
+-- -- )
+-- -- ,
+-- -- Q3 AS (
+-- -- SELECT 
+-- --     Q1.USER_ID
+-- --     ,Q1.TOTAL_SIGNUPS
+-- --     ,COALESCE(Q2.NO_TIMES_NO_SHOW,0) AS NO_SHOW
+-- -- FROM Q1
+-- -- LEFT JOIN Q2
+-- --     ON Q1.USER_ID = Q2.USER_ID
+-- -- )
+
+-- -- SELECT
+-- --     Q1.USER_ID
+-- --     ,Q1.TOTAL_SIGNUPS
+-- --     ,NO_SHOW
+-- TOTAL_SIGNUPS/NO_SHOW AS CONFIRMATION_RATE
+-- FROM Q3
