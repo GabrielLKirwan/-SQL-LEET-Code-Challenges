@@ -10,6 +10,7 @@ All the Leet Code SQL Challenges I completed whilst developing my SQL knowledge.
 | [0595-big-countries](https://github.com/GabrielLKirwan/LEET-Code-SQL-Challenges/tree/master/0595-big-countries) |
 | [1148-article-views-i](https://github.com/GabrielLKirwan/LEET-Code-SQL-Challenges/tree/master/1148-article-views-i) |
 | [1378-replace-employee-id-with-the-unique-identifier](https://github.com/GabrielLKirwan/LEET-Code-SQL-Challenges/tree/master/1378-replace-employee-id-with-the-unique-identifier) |
+| [1581-customer-who-visited-but-did-not-make-any-transactions](https://github.com/GabrielLKirwan/LEET-Code-SQL-Challenges/tree/master/1581-customer-who-visited-but-did-not-make-any-transactions) |
 | [1683-invalid-tweets](https://github.com/GabrielLKirwan/LEET-Code-SQL-Challenges/tree/master/1683-invalid-tweets) |
 | [1757-recyclable-and-low-fat-products](https://github.com/GabrielLKirwan/LEET-Code-SQL-Challenges/tree/master/1757-recyclable-and-low-fat-products) |
 <!---LeetCode Topics End-->
