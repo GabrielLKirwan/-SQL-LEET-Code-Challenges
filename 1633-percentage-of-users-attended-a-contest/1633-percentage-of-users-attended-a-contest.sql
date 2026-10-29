@@ -4,14 +4,7 @@ FROM USERS
 )
 SELECT 
     contest_id,
-    -- COUNT(DISTINCT USER_ID) AS participant_count,
     ROUND((COUNT(DISTINCT USER_ID) * 100.0 / (SELECT total_users FROM Total_Count)),2) AS PERCENTAGE 
 FROM REGISTER
     GROUP BY contest_id
     ORDER BY PERCENTAGE DESC, CONTEST_ID ASC
--- SELECT 
--- CONTEST_ID
--- ,COUNT(USER_ID) AS PARTICIPANT _COUNT
--- ,COUNT(USER_ID) * 100 / (SELECT total_users FROM TotalCount)) AS percent_of_total
--- FROM REGISTER
--- GROUP BY CONTEST_ID
