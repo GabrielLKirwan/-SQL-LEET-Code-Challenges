@@ -13,6 +13,7 @@ All the Leet Code SQL Challenges I completed whilst developing my SQL knowledge.
 | [0584-find-customer-referee](https://github.com/GabrielLKirwan/LEET-Code-SQL-Challenges/tree/master/0584-find-customer-referee) |
 | [0595-big-countries](https://github.com/GabrielLKirwan/LEET-Code-SQL-Challenges/tree/master/0595-big-countries) |
 | [0596-classes-with-at-least-5-students](https://github.com/GabrielLKirwan/LEET-Code-SQL-Challenges/tree/master/0596-classes-with-at-least-5-students) |
+| [0619-biggest-single-number](https://github.com/GabrielLKirwan/LEET-Code-SQL-Challenges/tree/master/0619-biggest-single-number) |
 | [0620-not-boring-movies](https://github.com/GabrielLKirwan/LEET-Code-SQL-Challenges/tree/master/0620-not-boring-movies) |
 | [1070-product-sales-analysis-iii](https://github.com/GabrielLKirwan/LEET-Code-SQL-Challenges/tree/master/1070-product-sales-analysis-iii) |
 | [1075-project-employees-i](https://github.com/GabrielLKirwan/LEET-Code-SQL-Challenges/tree/master/1075-project-employees-i) |
